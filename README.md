@@ -16,6 +16,7 @@ The CV Generator is a Java-based web application that allows users to create the
 - **Apache PDFBox Library**: Used for generating PDF documents.
 - **HTML to PDF Converter Library**: Converts HTML content to PDF.
 - **HTML, CSS, JS**: Technologies for the frontend interface.
+- **Docker compose**: To use easily
 
 ## Project Screenshots
 
@@ -27,20 +28,25 @@ The CV Generator is a Java-based web application that allows users to create the
 
 ## Installation and Setup
 
+### Prerequisites
+
+- [Docker](https://www.docker.com/get-started) installed on your machine.
+- [Docker Compose](https://docs.docker.com/compose/install/) installed on your machine.
+
+
 1. **Clone the Repository**
 
-   ```bash
+   ```
    git clone https://github.com/anas-ortukov/cv_generator.git
    ```
 2. **Navigate to the Project Directory**
-   ```bash
-    cd cv-generator
+   ```
+    cd cv_generator
    ```
 
-3. **Build and Run application**
-   ```bash
-   ./mvnw clean install
-   ./mvnw spring-boot:run
+3. **Run application with docker compose**
+   ```
+   docker compose up
    ```
 
 4. **Access Frontend page**
@@ -49,4 +55,11 @@ The CV Generator is a Java-based web application that allows users to create the
 5. **Fill out your details**
    - Enter your personal details into the form fields.
    - Click the "Generate CV" button to create your resume.
+
+6. **Stop application**
+   ```
+   docker compoes down
+   ```
+  
+
 
