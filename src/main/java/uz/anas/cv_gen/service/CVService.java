@@ -16,9 +16,6 @@ import uz.anas.cv_gen.dto.UserDto;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Base64;
 
 @Service
@@ -47,23 +44,5 @@ public class CVService {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    //TODO format the details experience and study time like this
-    public void formatDatesAndCalculateMonths(String from, String to) {
-        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("MMMM yyyy");
-
-        LocalDate fromDate = LocalDate.parse(from, inputFormatter);
-        LocalDate toDate = LocalDate.parse(to, inputFormatter);
-
-        String formattedFromDate = fromDate.format(outputFormatter);
-        String formattedToDate = toDate.format(outputFormatter);
-
-        long monthsBetween = ChronoUnit.MONTHS.between(
-                fromDate.withDayOfMonth(1),
-                toDate.withDayOfMonth(1)
-        );
-
     }
 }
