@@ -19,7 +19,7 @@ public class CvController {
     private final CVService cvService;
 
     @PostMapping
-    public HttpEntity<?> generateCv(@RequestParam("file") MultipartFile file, @RequestParam("details") String detailsJson) {
+    public HttpEntity<?> generateCv(@RequestParam(value = "file") MultipartFile file, @RequestParam("details") String detailsJson) {
         return cvService.generateCVHtml(detailsJson, file);
     }
 

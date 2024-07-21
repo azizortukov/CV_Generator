@@ -151,6 +151,10 @@ function removeElement(name, category) {
 
 async function generateCV() {
     let formData = new FormData();
+    if (avatarInput.files[0] == null) {
+        alert("Please include your image!")
+        return
+    }
     formData.append('file', avatarInput.files[0]);
     let details = {
         firstName: document.getElementById('firstName').value,

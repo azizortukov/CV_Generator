@@ -1,0 +1,5 @@
+services:
+  cv-gen:
+    image: anasortukov/cv-gen
+    ports:
+      - "8080:8080"
